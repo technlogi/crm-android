@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_right_half_round" />
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="350dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ic_left_half_round" />
+
+    <ImageView
+        android:id="@+id/product_dia_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:elevation="5dp"
+        android:src="@drawable/ic_cancel_dialog" />
+
+    <ScrollView
+        android:layout_below="@+id/product_dia_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/layout_page3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="10sp"
+                        android:elevation="3dp"
+                        android:hint="Product Name *"
+                        app:boxStrokeColor="@color/main"
+                        app:endIconTint="@color/main"
+                        app:hintTextColor="@color/main">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/dialog_add_product"
+                            android:layout_width="match_parent"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:layout_height="wrap_content" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--                <com.google.android.material.textfield.TextInputLayout-->
+                    <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                    <!--                    android:layout_width="match_parent"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_margin="10sp"-->
+                    <!--                    android:hint="Product Name"-->
+                    <!--                    app:boxStrokeColor="@color/main"-->
+                    <!--                    app:endIconDrawable="@drawable/ic_crm_vector"-->
+                    <!--                    app:endIconTint="@color/main"-->
+                    <!--                    app:hintTextColor="@color/main">-->
+
+                    <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                    <!--                        android:id="@+id/filledTextField1"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:inputType="text"-->
+                    <!--                        android:maxLines="1"-->
+                    <!--                        android:textCursorDrawable="@drawable/custom_cursor" />-->
+
+                    <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="10sp"
+                        android:elevation="3dp"
+                        android:hint="Brand *"
+                        app:boxStrokeColor="@color/main"
+                        app:endIconTint="@color/main"
+                        app:hintTextColor="@color/main">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/filledTextField2"
+                            android:layout_width="match_parent"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:layout_height="wrap_content" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    //bramd
+                    <!--                <com.google.android.material.textfield.TextInputLayout-->
+                    <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                    <!--                    android:layout_width="match_parent"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_margin="10sp"-->
+                    <!--                    android:hint="Brand"-->
+                    <!--                    app:boxStrokeColor="@color/main"-->
+                    <!--                    app:endIconTint="@color/main"-->
+                    <!--                    app:hintTextColor="@color/main">-->
+
+                    <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                    <!--                        android:id="@+id/filledTextField2"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:maxLines="1"-->
+                    <!--                        android:inputType="text"-->
+                    <!--                        android:textCursorDrawable="@drawable/custom_cursor" />-->
+
+                    <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="10sp"
+                        android:elevation="3dp"
+                        android:hint="Existing Buy Shop *"
+                        app:boxStrokeColor="@color/main"
+                        app:endIconTint="@color/main"
+                        app:hintTextColor="@color/main">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/filledTextField3"
+                            android:layout_width="match_parent"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:layout_height="wrap_content" />
+
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/filledTextField3"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:inputType="text"-->
+<!--                            android:maxLines="1"-->
+<!--                            android:textCursorDrawable="@drawable/custom_cursor" />-->
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10sp"
+                        android:hint="Existing Buy Rate (Wholesale / Retail) *"
+                        app:boxStrokeColor="@color/main"
+                        app:endIconTint="@color/main"
+                        app:hintTextColor="@color/main">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/filledTextField4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:textCursorDrawable="@drawable/custom_cursor" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10sp"
+                        android:hint="Required Qty *"
+                        app:boxStrokeColor="@color/main"
+                        app:endIconTint="@color/main"
+                        app:hintTextColor="@color/main">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/filledTextField5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:inputType="number"
+                            android:textCursorDrawable="@drawable/custom_cursor" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="10sp"
+                        android:elevation="3dp"
+                        android:hint="Unit *"
+                        app:boxStrokeColor="@color/main"
+                        app:endIconTint="@color/main"
+                        app:hintTextColor="@color/main">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/dailog_Unit"
+                            android:layout_width="match_parent"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:layout_height="wrap_content" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10sp"
+                        android:hint="Stock *"
+                        app:boxStrokeColor="@color/main"
+                        app:endIconTint="@color/main"
+                        app:hintTextColor="@color/main">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dailog_stock"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:textCursorDrawable="@drawable/custom_cursor" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/add"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/main_btn"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:padding="10sp"
+                        android:text="Add"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

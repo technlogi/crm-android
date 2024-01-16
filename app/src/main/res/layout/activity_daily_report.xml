@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Adapter.daily_report">
+
+    <RelativeLayout
+        android:id="@+id/tollbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#352311"
+        android:weightSum="10">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Daily Report"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/drawer"
+                android:layout_width="0dp"
+                android:layout_weight="0.1"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_gravity="center"
+
+
+                android:background="@drawable/add" />
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/logout"-->
+            <!--                    android:layout_width="30dp"-->
+            <!--                    android:layout_height="30dp"-->
+            <!--                    android:layout_marginRight="30dp"-->
+            <!--                    android:src="@drawable/logout"-->
+            <!--                    app:tint="@color/white" />-->
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_main_Todo"
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:elevation="5dp"
+        android:queryBackground="@android:color/transparent"
+        app:queryBackground="@android:color/transparent"
+        android:accessibilityLiveRegion="none"
+        android:alwaysDrawnWithCache="true"
+        android:iconifiedByDefault="false"
+        android:paddingBottom="70dp"
+        android:clipToPadding="false"
+        tools:ignore="MissingConstraints" />
+
+
+
+</LinearLayout>

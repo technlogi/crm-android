@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.crm">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/final_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/final_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CRM"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".edit_daily_report"
+            android:exported="false" />
+        <activity
+            android:name=".dailyActivity"
+            android:exported="false" />
+
+       <!-- <activity
+            android:name=".daily_report"
+            android:exported="false" />-->
+
+        <activity
+            android:name=".ActAllLocalData"
+            android:exported="false" />
+        <activity
+            android:name=".ActNextVisitLocalData"
+            android:exported="false" />
+        <activity
+            android:name=".ActReportLocalData"
+            android:exported="false" />
+        <activity
+            android:name=".ActVisitDetailLocalData"
+            android:exported="false" />
+        <activity
+            android:name=".drawer_profile"
+            android:exported="false" />
+        <activity
+            android:name=".view_all_todo_list"
+            android:exported="false" />
+        <activity
+            android:name=".customer_detail_Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FormActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".otpVerificationActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".splace_screen"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginScreenActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
