@@ -2707,8 +2707,6 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
 
                         autocompettextviewID.add(response.body().getResult().get(i).getCustomerId());
                         autocompettextviewphone1.add(response.body().getResult().get(i).getCustomerphone1());
-                        autocompettextviewphone2.add(response.body().getResult().get(i).getCustomerphone2());
-                        autocompettextviewphone3.add(response.body().getResult().get(i).getCustomerphone3());
 
 
 
@@ -2717,7 +2715,7 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
                         Log.d("TAG", "onResponse12444sds: " + autocompettextviewID);
                         Log.d("TAG", "onResponsePhone1: " + autocompettextviewphone1);
                         Log.d("TAG", "onResponsephone2: " + autocompettextviewphone2);
-                        Log.d("TAG", "onResponsephone3: " + autocompettextviewphone3);
+                       // Log.d("TAG", "onResponsephone3: " + autocompettextviewphone3);
                     }
 
 
