@@ -27,7 +27,7 @@ import com.example.crm.view_all_todo_list;
 import java.util.ArrayList;
 import java.util.List;
 
-public class customer_list_Adapter extends RecyclerView.Adapter<customer_list_Adapter.viewholder> implements Filterable {
+public class  customer_list_Adapter extends RecyclerView.Adapter<customer_list_Adapter.viewholder> implements Filterable {
 
     List<customer_list_POJO.Result> item;
     ArrayList<customer_list_POJO.Result> FullList;

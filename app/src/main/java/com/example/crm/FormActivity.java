@@ -22,11 +22,8 @@ import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.icu.util.Calendar;
-import android.icu.util.TimeZone;
 import android.location.Address;
-import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
@@ -65,7 +62,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.crm.Adapter.add_product_Adapter;
 import com.example.crm.Adapter.site_related_person_Adapter;
-import com.example.crm.Fragment.HomeFragment;
 import com.example.crm.Local_database.DBHandler;
 import com.example.crm.Network.CheckInternetConnection;
 import com.example.crm.Network.WebService;
@@ -96,8 +92,6 @@ import com.google.android.gms.location.LocationSettingsResponse;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.datepicker.MaterialDatePicker;
-import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.timepicker.MaterialTimePicker;
@@ -106,10 +100,6 @@ import com.google.gson.JsonSyntaxException;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Currency;
@@ -122,6 +112,7 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.Field;
 
 
 @RequiresApi(api = Build.VERSION_CODES.N)
@@ -213,6 +204,9 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
     ArrayAdapter<String> adapterItems;
 
     ArrayAdapter<String> adapterItems2;
+    ArrayAdapter<String> adapterItems9;
+    ArrayAdapter<String> adapterItems10;
+    ArrayAdapter<String> adapterItems11;
     ArrayAdapter<String> adapterItems3;
     ArrayAdapter<String> adapterItems4;
     ArrayAdapter<String> adapterItems5;
@@ -229,6 +223,9 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
 
     List<String> autocompettextview = new ArrayList<>();
     List<String> autocompettextviewID = new ArrayList<>();
+    List<String> autocompettextviewphone1 = new ArrayList<>();
+    List<String> autocompettextviewphone2 = new ArrayList<>();
+    List<String> autocompettextviewphone3 = new ArrayList<>();
 
     List<String> colony_autocompettextview = new ArrayList<>();
     List<String> colony_autocompettextviewID = new ArrayList<>();
@@ -249,7 +246,7 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
     List<String> unit_autocompettextviewID = new ArrayList<>();
 
     String ad_pro_name, ad_pro_id;
-    String ad_cusomer_name, ad_cusomer_id;
+    String ad_cusomer_name, ad_cusomer_id,ad_customer_phone1,ad_customer_phone2,ad_customer_phone3;
     String ad_colony_name, ad_colony_id;
     String ad_position_name, ad_position_id;
     String ad_site_person_name, ad_site_person_id;
@@ -284,6 +281,7 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
 
 
     TextView TextView2,TextView1,TextView3,TextView4,TextView5;
+    private okhttp3.Response.Builder response;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -893,16 +891,33 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
         p1_customer_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String itemselect= adapterView.getItemAtPosition(i).toString();
+
+                fetchuserDataofuser(itemselect);
                 ad_cusomer_name = autocompettextview.get(i);//kkkkkkkkkkkkkkk
                 ad_cusomer_id = autocompettextviewID.get(i);
+                ad_customer_phone1 = autocompettextviewID.get(i);
+                ad_customer_phone2 = autocompettextviewID.get(i);
+                ad_customer_phone3 = autocompettextviewID.get(i);
+
+
+
                 Log.d("TAG", "ad_cusomer_name: " + ad_cusomer_name);
                 Log.d("TAG", "ad_cusomer_id: " + ad_cusomer_id);
+                Log.d("TAG", "ad_cusomer_id: " + ad_customer_phone1);
+                Log.d("TAG", "ad_cusomer_id: " + ad_customer_phone2);
+                Log.d("TAG", "ad_cusomer_id: " + ad_customer_phone3);
 
                 SharedPreferences location = getSharedPreferences("MySharedPref", MODE_PRIVATE);
                 SharedPreferences.Editor editor = location.edit();
 
                 editor.putString("ad_cusomer_name", ad_cusomer_name);
                 editor.putString("ad_cusomer_id", ad_cusomer_id);
+                editor.putString("ad_cusomer_phone1", ad_customer_phone1);
+                editor.putString("ad_cusomer_phone2", ad_customer_phone2);
+                editor.putString("ad_cusomer_phone3", ad_customer_phone3);
+
                 editor.apply();
             }
         });
@@ -984,6 +999,8 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
                 return false;
             }
         });
+
+
 
         p2_colony_list.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -1497,6 +1514,7 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
                     ad_cusomer_id = autocompettextviewID.get(position);
 
 
+
                     Log.d("TAG", "ad_cusomer_name: " + ad_cusomer_name);
                     Log.d("TAG", "ad_cusomer_id: " + ad_cusomer_id);
 
@@ -1505,6 +1523,7 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
 
                     editor.putString("ad_cusomer_name", ad_cusomer_name);
                     editor.putString("ad_cusomer_id", ad_cusomer_id);
+
                     editor.apply();
 
                     String item = parent.getItemAtPosition(position).toString();//kkkkkkkkkkkkkkkk
@@ -2114,6 +2133,11 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
         });
     }
 
+    private void fetchuserDataofuser(String itemselect) {
+
+
+    }
+
     private void updateLabel() {
         String myFormat="dd-MM-yyyy";
         SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
@@ -2610,6 +2634,7 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
                 sharedPreferences.getString("latitude", ""),
                 sharedPreferences.getString("longitude", ""),
                 sharedPreferences.getString("user_id", ""),
+
                 sharedPreferences.getString("IMEI_no", "")).enqueue(new Callback<colony_list_POJO>() {
             @Override
             public void onResponse(Call<colony_list_POJO> call, Response<colony_list_POJO> response) {
@@ -2636,6 +2661,8 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
                     p2_colony_list.setAdapter(adapterItems3);
                     adapterItems3.notifyDataSetChanged();
 
+
+
                 } else {
 
 //                    Toast.makeText(FormActivity.this, "No response", Toast.LENGTH_SHORT).show();
@@ -2659,9 +2686,14 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
                 sharedPreferences.getString("latitude", ""),
                 sharedPreferences.getString("longitude", ""),
                 sharedPreferences.getString("user_id", ""),
+//                sharedPreferences.getString("mobile_1", ""),
+//                sharedPreferences.getString("mobile_2", ""),
+//                sharedPreferences.getString("mobile_3", ""),
+
                 sharedPreferences.getString("IMEI_no", "")).enqueue(new Callback<customer_list_dropdown_POJO>() {
             @Override
             public void onResponse(Call<customer_list_dropdown_POJO> call, Response<customer_list_dropdown_POJO> response) {
+                Log.d("respone_body","response"+response.body().getResult());
 
                 if (response.body().getResult() != null) {
 
@@ -2672,17 +2704,40 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
                     }
                     for (int i = 0; i < response.body().getResult().size(); i++) {
                         autocompettextview.add(response.body().getResult().get(i).getCustomerName());
+
                         autocompettextviewID.add(response.body().getResult().get(i).getCustomerId());
+                        autocompettextviewphone1.add(response.body().getResult().get(i).getCustomerphone1());
+                        autocompettextviewphone2.add(response.body().getResult().get(i).getCustomerphone2());
+                        autocompettextviewphone3.add(response.body().getResult().get(i).getCustomerphone3());
+
+
 
 
                         Log.d("TAG", "onResponse12444: " + autocompettextview);
                         Log.d("TAG", "onResponse12444sds: " + autocompettextviewID);
+                        Log.d("TAG", "onResponsePhone1: " + autocompettextviewphone1);
+                        Log.d("TAG", "onResponsephone2: " + autocompettextviewphone2);
+                        Log.d("TAG", "onResponsephone3: " + autocompettextviewphone3);
                     }
 
 
                     adapterItems2 = new ArrayAdapter<String>(FormActivity.this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, autocompettextview);
                     p1_customer_list.setAdapter(adapterItems2);
                     adapterItems2.notifyDataSetChanged();
+                    if (autocompettextviewphone1!=null ){
+
+                       // p1_mobile1.setText(autocompettextviewphone1.indexOf());
+                        p1_mobile1.setText(autocompettextviewphone1.toString());
+                        Toast.makeText(FormActivity.this, "Phone number is"+autocompettextviewphone1, Toast.LENGTH_SHORT).show();
+                    }
+                    if (autocompettextviewphone2!=null){
+                        p1_mobile2.setText(autocompettextviewphone2.toString());
+                        Toast.makeText(FormActivity.this, "Phone number is"+autocompettextviewphone2, Toast.LENGTH_SHORT).show();
+                    }
+                    if (autocompettextviewphone3!=null){
+                        p1_mobile3.setText(autocompettextviewphone3.toString());
+                        Toast.makeText(FormActivity.this, "Phone number is"+autocompettextviewphone3, Toast.LENGTH_SHORT).show();
+                    }
 
                 } else {
 
@@ -3978,5 +4033,7 @@ public class FormActivity extends AppCompatActivity implements LocationListener 
     public boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
+
+
 
 }

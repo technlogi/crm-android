@@ -51,6 +51,18 @@ public class customer_list_dropdown_POJO {
         @Expose
         private String customerName;
 
+        @SerializedName("mobile_1")
+        @Expose
+        private String customerphone1;
+        @SerializedName("mobile_2")
+        @Expose
+        private String customerphone2;
+        @SerializedName("mobile_3")
+        @Expose
+        private String customerphone3;
+
+
+
         public String getCustomerId() {
             return customerId;
         }
@@ -65,6 +77,31 @@ public class customer_list_dropdown_POJO {
 
         public void setCustomerName(String customerName) {
             this.customerName = customerName;
+        }
+
+
+        public String getCustomerphone1() {
+            return customerphone1;
+        }
+
+        public void setCustomerphone1(String customerphone1) {
+            this.customerphone1 = customerphone1;
+        }
+
+        public String getCustomerphone2() {
+            return customerphone2;
+        }
+
+        public void setCustomerphone2(String customerphone2) {
+            this.customerphone2 = customerphone2;
+        }
+
+        public String getCustomerphone3() {
+            return customerphone3;
+        }
+
+        public void setCustomerphone3(String customerphone3) {
+            this.customerphone3 = customerphone3;
         }
     }
 }

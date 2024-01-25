@@ -71,7 +71,7 @@ public class WebService {
 //             Post post = gson.fromJson(reader, Post.class);
 
             Retrofit client = new Retrofit.Builder()
-                    .baseUrl("http://15.206.168.247/erp/")
+                    .baseUrl("http://13.200.250.138/erp/")
 
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .client(okclient)
@@ -102,6 +102,11 @@ public class WebService {
                 @Field("longitude") String longitude,
                 @Field("user_id") String user_id,
                 @Field("imei_no") String imei_no
+//                 @Field("mobile_1") String mobile_1,
+//                @Field("mobile_2") String mobile_2,
+//                @Field("mobile_3") String mobile_3
+
+
 
         );
 
@@ -113,6 +118,7 @@ public class WebService {
                 @Field("longitude") String longitude,
                 @Field("user_id") String user_id,
                 @Field("imei_no") String imei_no
+
         );
 
         @POST("api/crm/site_position_list.php")

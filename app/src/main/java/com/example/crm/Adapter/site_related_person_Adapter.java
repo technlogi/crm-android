@@ -796,5 +796,7 @@ public class site_related_person_Adapter extends RecyclerView.Adapter<site_relat
             fullLL = itemView.findViewById(R.id.fullLL);
 
         }
+
     }
+
 }

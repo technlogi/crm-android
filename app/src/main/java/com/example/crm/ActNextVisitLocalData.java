@@ -67,7 +67,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ActNextVisitLocalData extends AppCompatActivity {
+public class  ActNextVisitLocalData extends AppCompatActivity {
 
     ImageView back_img,no_data_found;
     LinearLayout list_ll1,list_ll2,list_ll3,list_ll4,list_ll5,list_ll6;
