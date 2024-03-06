@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/mHome"
+        android:icon="@drawable/ic_crm_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/mCustomer"
+        android:icon="@drawable/ic_baseline_people_outline_24"
+        android:title="Customer" />
+
+    <item
+        android:id="@+id/blank"
+        android:title="blank" />
+
+    <item
+        android:id="@+id/mlist"
+        android:icon="@drawable/ic_crm_list"
+        android:title="Visit" />
+
+    <item
+        android:id="@+id/mProfile"
+        android:icon="@drawable/ic_baseline_person_outline_24"
+        android:title="Site Person" />
+</menu>

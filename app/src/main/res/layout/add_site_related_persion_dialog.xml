@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_right_half_round" />
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="350dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ic_left_half_round" />
+    <ImageView
+        android:id="@+id/product_dia_cancel"
+        android:layout_width="wrap_content"
+        android:elevation="5dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_cancel_dialog"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <!--Page3-->
+    <RelativeLayout
+        android:layout_below="@+id/product_dia_cancel"
+        android:id="@+id/layout_page3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="10sp"
+                    android:elevation="3dp"
+                    android:hint="Type of person *"
+                    app:boxStrokeColor="@color/main"
+                       app:endIconTint="@color/main"
+                    app:hintTextColor="@color/main">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/dialog_type_person_list"
+                        android:layout_width="match_parent"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="10sp"
+                    android:elevation="3dp"
+                    android:hint="Name *"
+                    app:boxStrokeColor="@color/main"
+                    app:endIconTint="@color/main"
+                    app:hintTextColor="@color/main">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/site_filledTextField2"
+                        android:layout_width="match_parent"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="10sp"-->
+<!--                    android:hint="Name *"-->
+<!--                    app:boxStrokeColor="@color/main"-->
+<!--                    app:endIconTint="@color/main"-->
+<!--                    app:hintTextColor="@color/main">-->
+
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/site_filledTextField2"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:maxLines="1"-->
+<!--                        android:inputType="text"-->
+<!--                        android:textCursorDrawable="@drawable/custom_cursor" />-->
+
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:hint="Contact Number *"
+                    app:boxStrokeColor="@color/main"
+                    app:endIconTint="@color/main"
+                    app:hintTextColor="@color/main">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/site_filledTextField3"
+                        android:maxLength="10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:textCursorDrawable="@drawable/custom_cursor" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="10sp"
+                    android:elevation="3dp"
+                    android:hint="Date of Birth *"
+                    app:boxStrokeColor="@color/main"
+                    app:endIconTint="@color/white"
+                    app:hintTextColor="@color/black2">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/site_peron_dob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/site_peron_dob"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:inputType="text"-->
+<!--                        android:maxLines="1"-->
+<!--                        android:textCursorDrawable="@drawable/custom_cursor" />-->
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:hint="ON Site *"
+                    app:boxStrokeColor="@color/main"
+                    app:endIconTint="@color/main"
+                    app:hintTextColor="@color/main">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/site_on"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+
+                        android:textCursorDrawable="@drawable/custom_cursor" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:hint="OFF Site *"
+                    app:boxStrokeColor="@color/main"
+                    app:endIconTint="@color/main"
+                    app:hintTextColor="@color/main">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/site_off"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+
+                        android:textCursorDrawable="@drawable/custom_cursor" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/main_btn"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:padding="10sp"
+                    android:text="Add"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

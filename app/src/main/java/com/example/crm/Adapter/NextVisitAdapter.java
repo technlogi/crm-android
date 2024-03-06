@@ -1,0 +1,76 @@
+package com.example.crm.Adapter;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.crm.POJO.AllNextVisitDataBean;
+import com.example.crm.POJO.last_remark_POJO;
+import com.example.crm.R;
+
+import java.util.List;
+
+public class NextVisitAdapter extends RecyclerView.Adapter<NextVisitAdapter.viewholder> {
+
+    List<AllNextVisitDataBean> last_remark_list;
+    Context context;
+
+    public NextVisitAdapter(List<AllNextVisitDataBean> last_remark_list, Context context) {
+        this.last_remark_list = last_remark_list;
+        this.context = context;
+    }
+
+//    public last_remark_Adapter(List<last_remark_POJO> last_remark_list, customer_detail_Activity context) {
+//        this.last_remark_list = last_remark_list;
+//        this.context = context;
+//    }
+
+
+    @NonNull
+    @Override
+    public NextVisitAdapter.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.last_remark_holder, parent, false);
+        return new viewholder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull NextVisitAdapter.viewholder holder, int position) {
+
+        holder.contact_mode.setText(last_remark_list.get(position).getNEXTVISIT_CONTACT_MODE_COL());
+        holder.next_date.setText(last_remark_list.get(position).getNEXTVISIT_NEXT_DATE_COL());
+        holder.next_time.setText(last_remark_list.get(position).getNEXTVISIT_NEXT_TIME_COL());
+        holder.remark.setText(last_remark_list.get(position).getNEXTVISIT_REMARK_COL());
+
+        //holder.dilog_agent_code.setText(last_remark_list.get(position).getAgent_code());
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return last_remark_list.size();
+    }
+
+    public class viewholder extends RecyclerView.ViewHolder {
+
+        TextView contact_mode;
+        TextView next_date;
+        TextView next_time;
+        TextView remark;
+        //TextView dilog_agent_code;
+
+        public viewholder(@NonNull View itemView) {
+            super(itemView);
+            contact_mode = itemView.findViewById(R.id.contact_mode);
+            next_date = itemView.findViewById(R.id.next_date);
+            next_time = itemView.findViewById(R.id.next_time);
+            remark = itemView.findViewById(R.id.remark);
+            //dilog_agent_code = itemView.findViewById(R.id.dilog_agent_code);
+
+        }
+    }
+}

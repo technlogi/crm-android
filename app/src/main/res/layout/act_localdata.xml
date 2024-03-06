@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".dailyActivity">
+
+    <RelativeLayout
+        android:id="@+id/tollbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#352311"
+        android:weightSum="10">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Local Data"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/im_add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="10dp"
+                android:layout_weight="0.1"
+                android:visibility="gone"
+                android:background="@drawable/add" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_local_data"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ly_sync"
+        android:layout_below="@+id/tollbar"
+        android:layout_weight="10"
+        android:accessibilityLiveRegion="none"
+        android:alwaysDrawnWithCache="true"
+        android:clipToPadding="false"
+        android:elevation="5dp"
+        android:iconifiedByDefault="false"
+        android:paddingBottom="70dp"
+        android:queryBackground="@android:color/transparent"
+        app:queryBackground="@android:color/transparent"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/ly_sync"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#352311"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Now Synchronize All Data"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/im_add1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="10dp"
+            android:layout_weight="0.1"
+            android:visibility="gone"
+            android:background="@drawable/add" />
+
+    </LinearLayout>
+
+</RelativeLayout>
